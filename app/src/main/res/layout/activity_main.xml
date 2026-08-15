@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#F5F5F5">
+
+    <!-- 标题 -->
+
+    <!-- 输入区域卡片 -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp"
+        app:cardBackgroundColor="#FFFFFF">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="0dp">
+                <!-- 成本输入 -->
+                <TableRow tools:ignore="UselessParent" android:padding="0dp">
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/chengben"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/cc_chengben_hint"
+                            android:inputType="numberDecimal" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <TextView
+                        android:id="@+id/yingkuibiA2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginBottom="8dp"
+                        android:text=""
+                        android:layout_marginStart="8dp"
+                        android:textSize="18sp" />
+                </TableRow>
+            </TableLayout>
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="0dp">
+                <TableRow tools:ignore="UselessParent" android:padding="0dp">
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/chishuliang"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/cc_shuliang_hint"
+                            android:inputType="number" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <TextView
+                        android:id="@+id/future"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginBottom="8dp"
+                        android:text=""
+                        android:layout_marginStart="8dp"
+                        android:textSize="18sp" />
+                </TableRow>
+            </TableLayout>
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="0dp">
+                <TableRow tools:ignore="UselessParent" android:padding="0dp">
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/bucang"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/bc_jiage_hint"
+                            android:inputType="numberDecimal" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <TextView
+                        android:id="@+id/yingkuibiB2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginStart="8dp"
+                        android:text=""
+                        android:textSize="18sp" />
+                </TableRow>
+            </TableLayout>
+
+            <!-- 补仓数量输入 -->
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <!-- 补仓数量输入部分的 TableRow -->
+                <TableRow tools:ignore="UselessParent">
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/bushuliang"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/bc_shuliang_hint"
+                            android:inputType="numberSigned" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <Button
+                        android:id="@+id/btn_clear"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/clear_txt"
+                        android:layout_marginStart="8dp"
+                        android:backgroundTint="#ffa726" />
+                </TableRow>
+            </TableLayout>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- 结果显示卡片 -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp"
+        app:cardBackgroundColor="#FFFFFF">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <!-- 第一行：总成本和盈亏前 -->
+            <TableRow>
+                <TextView
+                    android:id="@+id/chengbenjia"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/chengbenjia"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/yingkuibiA"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/yingkuibiA"
+                    android:textSize="18sp" />
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:id="@+id/zongchicang"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/zongchicang"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/yingkuibiB"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/yingkuibiB"
+                    android:textSize="18sp" />
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:id="@+id/zongshizhi"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/zongshizhi"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/kuisun"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/kuisun"
+                    android:textSize="18sp" />
+            </TableRow>
+        </TableLayout>
+    </com.google.android.material.card.MaterialCardView>
+</LinearLayout>

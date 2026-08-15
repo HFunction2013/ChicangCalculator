@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">持仓计算器</string>
+    <string name="zongshizhi">总市值</string>
+    <string name="zongchicang">总持仓</string>
+    <string name="yingkuibiA">补仓前</string>
+    <string name="yingkuibiB">补仓后</string>
+    <string name="kuisun">盈亏额</string>
+    <string name="chengbenjia">成本价</string>
+    <string name="cc_chengben_hint">持仓成本</string>
+    <string name="cc_shuliang_hint">持仓数量</string>
+    <string name="bc_jiage_hint">补仓价格</string>
+    <string name="bc_shuliang_hint">补仓数量</string>
+    <string name="clear_txt">清空</string>
+</resources>
